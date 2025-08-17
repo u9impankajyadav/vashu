@@ -16,21 +16,29 @@ A modern, responsive static website for a professional hair and skin treatment c
 
 ## 📁 Project Structure
 
-```
-vashu/
-├── index.html          # Homepage
-├── about.html          # About page
-├── services.html       # Services page
-├── team.html           # Team page
-├── blog.html           # Blog page
-├── contact.html        # Contact page
-├── css/
-│   └── style.css       # Main stylesheet
-├── js/
-│   └── script.js       # JavaScript functionality
-├── images/             # Image assets
-└── README.md           # This file
-```
+       ```
+       vashu/
+       ├── index.html          # Homepage
+       ├── about.html          # About page
+       ├── services.html       # Services page
+       ├── team.html           # Team page
+       ├── blog.html           # Blog page
+       ├── contact.html        # Contact page
+       ├── blogs/              # Blog posts directory
+       │   ├── blog-keratin-guide.html
+       │   ├── blog-hair-color-trends.html
+       │   ├── blog-winter-skin.html
+       │   ├── blog-anti-aging-treatments.html
+       │   ├── blog-natural-hair-care.html
+       │   ├── blog-bridal-beauty.html
+       │   └── blog-chemical-peels.html
+       ├── css/
+       │   └── style.css       # Main stylesheet
+       ├── js/
+       │   └── script.js       # JavaScript functionality
+       ├── images/             # Image assets
+       └── README.md           # This file
+       ```
 
 ## 🚀 Getting Started
 
@@ -156,11 +164,12 @@ The contact page includes an embedded Google Maps iframe. To customize:
 
 ## 📝 Content Management
 
-### Adding New Blog Posts
-1. Create new HTML file (e.g., `blog-new-post.html`)
-2. Copy structure from existing blog posts
-3. Update content and images
-4. Add link to main blog page
+       ### Adding New Blog Posts
+       1. Create new HTML file in the `blogs/` directory (e.g., `blogs/blog-new-post.html`)
+       2. Copy structure from existing blog posts
+       3. Update content and images
+       4. Add link to main blog page (`blog.html`)
+       5. Update navigation links to use `../` for parent directory references
 
 ### Updating Services
 1. Edit `services.html`
