@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Placeholder Images</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .image-container {
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+        }
+        canvas {
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+        button {
+            background: #8B5CF6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #7C3AED;
+        }
+    </style>
+</head>
+<body>
+    <h1>Generate Placeholder Images for Vashu Website</h1>
+    <p>Click the buttons below to generate and download placeholder images:</p>
+    
+    <div class="image-container">
+        <canvas id="hero-clinic" width="1200" height="800"></canvas>
+        <br>
+        <button onclick="generateImage('hero-clinic', 'hero-clinic.jpg', 'Modern Beauty Clinic')">Generate Hero Clinic</button>
+    </div>
+    
+    <div class="image-container">
+        <canvas id="about-clinic" width="600" height="400"></canvas>
+        <br>
+        <button onclick="generateImage('about-clinic', 'about-clinic.jpg', 'Professional Treatment')">Generate About Clinic</button>
+    </div>
+    
+    <div class="image-container">
+        <canvas id="keratin-treatment" width="400" height="300"></canvas>
+        <br>
+        <button onclick="generateImage('keratin-treatment', 'keratin-treatment.jpg', 'Keratin Treatment')">Generate Keratin</button>
+    </div>
+    
+    <div class="image-container">
+        <canvas id="hair-spa" width="400" height="300"></canvas>
+        <br>
+        <button onclick="generateImage('hair-spa', 'hair-spa.jpg', 'Hair Spa')">Generate Hair Spa</button>
+    </div>
+    
+    <div class="image-container">
+        <canvas id="hair-coloring" width="400" height="300"></canvas>
+        <br>
+        <button onclick="generateImage('hair-coloring', 'hair-coloring.jpg', 'Hair Coloring')">Generate Hair Color</button>
+    </div>
+    
+    <div class="image-container">
+        <canvas id="facial-treatment" width="400" height="300"></canvas>
+        <br>
+        <button onclick="generateImage('facial-treatment', 'facial-treatment.jpg', 'Facial Treatment')">Generate Facial</button>
+    </div>
+    
+    <div class="image-container">
+        <canvas id="chemical-peel" width="400" height="300"></canvas>
+        <br>
+        <button onclick="generateImage('chemical-peel', 'chemical-peel.jpg', 'Chemical Peel')">Generate Chemical Peel</button>
+    </div>
+    
+    <div class="image-container">
+        <canvas id="anti-aging" width="400" height="300"></canvas>
+        <br>
+        <button onclick="generateImage('anti-aging', 'anti-aging.jpg', 'Anti-Aging')">Generate Anti-Aging</button>
+    </div>
+    
+    <div class="image-container">
+        <canvas id="makeup-artistry" width="400" height="300"></canvas>
+        <br>
+        <button onclick="generateImage('makeup-artistry', 'makeup-artistry.jpg', 'Makeup Artistry')">Generate Makeup</button>
+    </div>
+    
+    <div class="image-container">
+        <canvas id="hair-styling" width="400" height="300"></canvas>
+        <br>
+        <button onclick="generateImage('hair-styling', 'hair-styling.jpg', 'Hair Styling')">Generate Hair Styling</button>
+    </div>
+    
+    <div class="image-container">
+        <canvas id="complete-makeover" width="400" height="300"></canvas>
+        <br>
+        <button onclick="generateImage('complete-makeover', 'complete-makeover.jpg', 'Complete Makeover')">Generate Makeover</button>
+    </div>
+    
+    <div class="image-container">
+        <canvas id="team-member1" width="400" height="500"></canvas>
+        <br>
+        <button onclick="generateImage('team-member1', 'team-member1.jpg', 'Dr. Sarah Johnson')">Generate Team Member 1</button>
+    </div>
+    
+    <div class="image-container">
+        <canvas id="team-member2" width="400" height="500"></canvas>
+        <br>
+        <button onclick="generateImage('team-member2', 'team-member2.jpg', 'Maria Rodriguez')">Generate Team Member 2</button>
+    </div>
+    
+    <div class="image-container">
+        <canvas id="team-member3" width="400" height="500"></canvas>
+        <br>
+        <button onclick="generateImage('team-member3', 'team-member3.jpg', 'Emily Chen')">Generate Team Member 3</button>
+    </div>
+    
+    <div class="image-container">
+        <canvas id="team-member4" width="400" height="500"></canvas>
+        <br>
+        <button onclick="generateImage('team-member4', 'team-member4.jpg', 'Lisa Thompson')">Generate Team Member 4</button>
+    </div>
+    
+    <div class="image-container">
+        <canvas id="team-member5" width="400" height="500"></canvas>
+        <br>
+        <button onclick="generateImage('team-member5', 'team-member5.jpg', 'David Kim')">Generate Team Member 5</button>
+    </div>
+    
+    <div class="image-container">
+        <canvas id="team-member6" width="400" height="500"></canvas>
+        <br>
+        <button onclick="generateImage('team-member6', 'team-member6.jpg', 'Amanda Wilson')">Generate Team Member 6</button>
+    </div>
+    
+    <div class="image-container">
+        <canvas id="client1" width="120" height="120"></canvas>
+        <br>
+        <button onclick="generateImage('client1', 'client1.jpg', 'Sarah Johnson')">Generate Client 1</button>
+    </div>
+    
+    <div class="image-container">
+        <canvas id="client2" width="120" height="120"></canvas>
+        <br>
+        <button onclick="generateImage('client2', 'client2.jpg', 'Michael Chen')">Generate Client 2</button>
+    </div>
+    
+    <div class="image-container">
+        <canvas id="client3" width="120" height="120"></canvas>
+        <br>
+        <button onclick="generateImage('client3', 'client3.jpg', 'Emma Davis')">Generate Client 3</button>
+    </div>
+    
+    <div class="image-container">
+        <canvas id="blog-featured" width="600" height="400"></canvas>
+        <br>
+        <button onclick="generateImage('blog-featured', 'blog-featured.jpg', 'Keratin Guide')">Generate Blog Featured</button>
+    </div>
+    
+    <div class="image-container">
+        <canvas id="blog-post1" width="400" height="250"></canvas>
+        <br>
+        <button onclick="generateImage('blog-post1', 'blog-post1.jpg', 'Winter Skin Care')">Generate Blog Post 1</button>
+    </div>
+    
+    <div class="image-container">
+        <canvas id="blog-post2" width="400" height="250"></canvas>
+        <br>
+        <button onclick="generateImage('blog-post2', 'blog-post2.jpg', 'Hair Color Trends')">Generate Blog Post 2</button>
+    </div>
+    
+    <div class="image-container">
+        <canvas id="blog-post3" width="400" height="250"></canvas>
+        <br>
+        <button onclick="generateImage('blog-post3', 'blog-post3.jpg', 'Anti-Aging Treatments')">Generate Blog Post 3</button>
+    </div>
+    
+    <div class="image-container">
+        <canvas id="blog-post4" width="400" height="250"></canvas>
+        <br>
+        <button onclick="generateImage('blog-post4', 'blog-post4.jpg', 'Natural Hair Care')">Generate Blog Post 4</button>
+    </div>
+    
+    <div class="image-container">
+        <canvas id="blog-post5" width="400" height="250"></canvas>
+        <br>
+        <button onclick="generateImage('blog-post5', 'blog-post5.jpg', 'Bridal Beauty')">Generate Blog Post 5</button>
+    </div>
+    
+    <div class="image-container">
+        <canvas id="blog-post6" width="400" height="250"></canvas>
+        <br>
+        <button onclick="generateImage('blog-post6', 'blog-post6.jpg', 'Chemical Peels')">Generate Blog Post 6</button>
+    </div>
+    
+    <div class="image-container">
+        <canvas id="about-story" width="600" height="400"></canvas>
+        <br>
+        <button onclick="generateImage('about-story', 'about-story.jpg', 'Vashu Story')">Generate About Story</button>
+    </div>
+
+    <script>
+        function generateImage(canvasId, filename, title) {
+            const canvas = document.getElementById(canvasId);
+            const ctx = canvas.getContext('2d');
+            
+            // Create gradient background
+            const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+            gradient.addColorStop(0, '#8B5CF6');
+            gradient.addColorStop(1, '#EC4899');
+            
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // Add some decorative elements
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
+            ctx.beginPath();
+            ctx.arc(canvas.width * 0.8, canvas.height * 0.2, 50, 0, 2 * Math.PI);
+            ctx.fill();
+            
+            ctx.beginPath();
+            ctx.arc(canvas.width * 0.2, canvas.height * 0.8, 30, 0, 2 * Math.PI);
+            ctx.fill();
+            
+            // Add text
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 24px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText(title, canvas.width / 2, canvas.height / 2);
+            
+            ctx.font = '16px Arial';
+            ctx.fillText('Vashu Hair & Skin Treatment', canvas.width / 2, canvas.height / 2 + 30);
+            
+            // Download the image
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+        
+        // Generate all images automatically
+        window.onload = function() {
+            setTimeout(() => {
+                const buttons = document.querySelectorAll('button');
+                buttons.forEach((button, index) => {
+                    setTimeout(() => {
+                        button.click();
+                    }, index * 500);
+                });
+            }, 1000);
+        };
+    </script>
+</body>
+</html>
