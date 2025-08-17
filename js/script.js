@@ -94,30 +94,107 @@ if (contactForm) {
         const name = document.querySelector('#name').value.trim();
         const email = document.querySelector('#email').value.trim();
         const message = document.querySelector('#message').value.trim();
+        const phone = document.querySelector('#phone').value.trim();
+        const service = document.querySelector('#service').value;
+        const appointmentDate = document.querySelector('#appointment-date').value;
         
         if (!name || !email || !message) {
-            alert('Please fill in all fields');
+            showNotification('Please fill in all required fields', 'error');
             return;
         }
         
         if (!isValidEmail(email)) {
-            alert('Please enter a valid email address');
+            showNotification('Please enter a valid email address', 'error');
             return;
         }
         
-        // Simulate form submission
+        // Show loading state
         const submitBtn = contactForm.querySelector('button[type="submit"]');
         const originalText = submitBtn.textContent;
         submitBtn.textContent = 'Sending...';
         submitBtn.disabled = true;
         
+        // Prepare form data
+        const formData = {
+            name: name,
+            email: email,
+            phone: phone,
+            service: service,
+            appointmentDate: appointmentDate,
+            message: message,
+            timestamp: new Date().toISOString()
+        };
+        
+        // For static sites, you can use Formspree, Netlify Forms, or EmailJS
+        // This is a simulation - replace with actual form submission
         setTimeout(() => {
-            alert('Thank you for your message! We will get back to you soon.');
+            // Simulate successful submission
+            showNotification('Thank you for your message! We will get back to you within 24 hours.', 'success');
             contactForm.reset();
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
+            
+            // Log form data (for development - remove in production)
+            console.log('Form submitted:', formData);
+            
+            // Optional: Send to analytics or logging service
+            // logFormSubmission(formData);
         }, 2000);
     });
+}
+
+// Notification system
+function showNotification(message, type = 'info') {
+    // Remove existing notifications
+    const existingNotification = document.querySelector('.notification');
+    if (existingNotification) {
+        existingNotification.remove();
+    }
+    
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 15px 20px;
+        border-radius: 8px;
+        color: white;
+        font-weight: 500;
+        z-index: 10000;
+        max-width: 400px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+    `;
+    
+    // Set background color based on type
+    if (type === 'success') {
+        notification.style.background = '#10B981';
+    } else if (type === 'error') {
+        notification.style.background = '#EF4444';
+    } else {
+        notification.style.background = '#3B82F6';
+    }
+    
+    notification.textContent = message;
+    document.body.appendChild(notification);
+    
+    // Animate in
+    setTimeout(() => {
+        notification.style.transform = 'translateX(0)';
+    }, 100);
+    
+    // Auto remove after 5 seconds
+    setTimeout(() => {
+        notification.style.transform = 'translateX(100%)';
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.remove();
+            }
+        }, 300);
+    }, 5000);
 }
 
 // Email validation function
